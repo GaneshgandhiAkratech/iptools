@@ -87,21 +87,30 @@
             </tr>
           </thead>
           <tbody>
-          <?php foreach ($rented_product as $key => $product) { ?>
+          <?php foreach ($view_product as $key => $product) { ?>
             <tr>
-              <td>#<?php echo $product['product_id']; ?></td>
               <td>
                 <?php if($product['image']){ ?>
                 <img src="<?php echo $product['image']; ?>" alt="Product 1"
                   class="img-circle img-size-32 mr-2">
                 <?php } echo $product['name']; ?>
               </td>
-              <td><?php echo $product['quantity']; ?></td>
-              <td>$<?php echo $product['total']; ?> USD</td>
+              <td>$<?php echo $product['price']; ?> USD</td>
+              <td>
+                <strong class="text-success mr-1">
+                  <?php echo $product['viewed']; ?>
+                </strong>
+              </td>
+              <td>
+                <?php echo $product['percent']; ?>
+                <!-- <a href="#" class="text-muted">
+                  <i class="fas fa-search"></i>
+                </a> -->
+              </td>
             </tr>
           <?php } ?>
           </tbody>
-        </table>
+         </table>
       </div>
     </div>
   </div>
